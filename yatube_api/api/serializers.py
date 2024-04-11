@@ -42,7 +42,7 @@ class FollowSerializer(serializers.ModelSerializer):
                 fields=('user', 'following')
             )
         ]
-    
+
     def validate_following(self, value):
         if self.context['request'].user == value:
             raise serializers.ValidationError(
